@@ -19,5 +19,11 @@ class WebsiteController {
 
 	}
 
+	public function adminIndex() {
+
+		echo"DIT IS DE ADMIN PAGINA";
+
+	}
+
 }
 

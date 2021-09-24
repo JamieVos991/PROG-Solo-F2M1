@@ -12,8 +12,10 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	// Lees de docs, daar zie je hoe je routes kunt maken: https://github.com/skipperbent/simple-php-router#routes
 
 	SimpleRouter::get( '/', 'WebsiteController@home' )->name( 'home' );
-
-
+	SimpleRouter::get( '/admin', 'WebsiteController@adminIndex' )->name( 'admin' );
+	SimpleRouter::get( '/registreren', 'RegistrationController@registrationForm')->name( 'register.form' );
+	SimpleRouter::post( '/registreren/verwerken', 'RegistrationController@handleRegistrationForm')->name( 'register.handle' );
+	SimpleRouter::get( '/registreren/bedankt', 'RegistrationController@registrationThankYou')->name( 'register.thankyou' );
 
 
 	// STOP: Tot hier al je eigen URL's zetten, dit stukje laat de 4040 pagina zien als een route/url niet kan worden gevonden.
