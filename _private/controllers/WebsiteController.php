@@ -14,8 +14,10 @@ class WebsiteController {
 
 	public function home() {
 
+		$blogs = getAllBlogs();
+		
 		$template_engine = get_template_engine();
-		echo $template_engine->render('homepage');
+		echo $template_engine->render('homepage', ['blogs' => $blogs]);
 
 	}
 

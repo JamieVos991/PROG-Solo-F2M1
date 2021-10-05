@@ -14,9 +14,15 @@
 </div>
 <?php $this->stop()?>
 
-<h1>Welkom</h1>
-
-<p>Dit is de start van jullie project website!</p>
+<?php foreach($blogs as $post): ?>
+        <div class="blog">
+                <h2><?php echo $post['titel']?></h2>
+                <h5><?php echo $post['datum']?></h5>
+                <p>
+                <?php echo $post['content']?>
+                </p>
+        </div>
+<?php endforeach;?>
 
 
 

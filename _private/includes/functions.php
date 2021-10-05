@@ -87,6 +87,7 @@ function current_route_is( $name ) {
 
 }
 
+
 function validateRegistrationData($data){
 
 	$errors = [];

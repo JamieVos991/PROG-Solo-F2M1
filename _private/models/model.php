@@ -9,3 +9,11 @@ function getUsers() {
 
 	return $statement->fetchAll();
 }
+
+function getAllBlogs() {
+	$connection = dbConnect();
+	$sql        = "SELECT * FROM `blog`";
+	$statement  = $connection->query( $sql );
+
+	return $statement->fetchAll();
+}

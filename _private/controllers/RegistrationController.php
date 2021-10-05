@@ -51,6 +51,6 @@ class RegistrationController {
 
 	public function registrationThankYou(){
 		$template_engine = get_template_engine();
-		echo $template_engine->render('register_form', ['errors' => $result['errors']]);
+		echo $template_engine->render("register_thankyou");
 	}
 }
