@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="<?php echo site_url( '/css/style.css' ) ?>" media="all">
 	<?php if ( $this->section( 'css' ) ): ?>
 		<?php echo $this->section( 'css' ) ?>
+        </style>
 	<?php endif; ?>
 </head>
 <body>

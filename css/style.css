@@ -2,7 +2,8 @@
 
 body {
     font-family: "Nunito", "Open Sans", Arial, Helvetica, sans-serif;
-    background: rgba(20, 58, 135, 0.8);
+    /* background: rgba(20, 58, 135, 0.8); */
+    background: red;
 }
 
 main {
