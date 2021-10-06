@@ -18,15 +18,17 @@ class RegistrationController {
 		echo $template_engine->render('register_form');
 	}
 
-	public function handleRegistrationForm(){
+	public function handleRegistrationForm(){	
 		// Hier wordt zo het form afgehandeld
 		
+		$errors = [];
+
 		$result = validateRegistrationData($_POST);
 
-		if (count ($result['errors']) === 0){
+		if ( count( $result['errors'] ) === 0){
 			//Opslaan van de gebruiker
 		
-			if ( userNotRegistered ($result['data']['email'])){
+			if (userNotRegistered ($result['data']['email'])) {
 
 				createUser($result['data']['email'], $result['data']['wachtwoord']);
 				
@@ -45,7 +47,7 @@ class RegistrationController {
 		}
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('register_form', ['errors' => $errors]);
+		echo $template_engine->render( 'register_form', ['errors' => $errors]);
 
 	}
 
