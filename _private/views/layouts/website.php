@@ -15,9 +15,7 @@
 </head>
 <body>
 <div class="container">
-    <header>
-        <h1>Social Responsibility</h1>
-    </header>
+    
     <nav>
 		<?php if ( $this->section( 'navigation' ) ): ?>
 			<?php echo $this->section( 'navigation' ) ?>

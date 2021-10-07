@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 body {
+    font-family: 'Noto Sans', sans-serif;
     font-family: "Nunito", "Open Sans", Arial, Helvetica, sans-serif;
     /* background: rgba(20, 58, 135, 0.8); */
     background-color: #e5e5f7;
-    background-image:  linear-gradient(30deg, #1E07A0 12%, transparent 12.5%, transparent 87%, #1E07A0 87.5%, #1E07A0), linear-gradient(150deg, #1E07A0 12%, transparent 12.5%, transparent 87%, #1E07A0 87.5%, #1E07A0), linear-gradient(30deg, #1E07A0 12%, transparent 12.5%, transparent 87%, #1E07A0 87.5%, #1E07A0), linear-gradient(150deg, #1E07A0 12%, transparent 12.5%, transparent 87%, #1E07A0 87.5%, #1E07A0), linear-gradient(60deg, #1E07A077 25%, transparent 25.5%, transparent 75%, #1E07A077 75%, #1E07A077), linear-gradient(60deg, #1E07A077 25%, transparent 25.5%, transparent 75%, #1E07A077 75%, #1E07A077);
+    background-image:  linear-gradient(30deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(150deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(30deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(150deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(60deg, #FE8D0D77 25%, transparent 25.5%, transparent 75%, #FE8D0D77 75%, #FE8D0D77), linear-gradient(60deg, #FE8D0D77 25%, transparent 25.5%, transparent 75%, #FE8D0D77 75%, #FE8D0D77);
     background-size: 80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    padding-bottom: 40px;
     }
 
 main {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 4fr;
-    grid-gap: 40px;
-    background: rgb(244, 250, 255);
+    grid-gap: 40px; */
+    background: rgb(226, 240, 252);
 }
 
 header {
@@ -27,13 +30,15 @@ header h1 {
 }
 
 nav {
+    margin-top: 50px;
     padding: 20px;
-    background: rgb(254, 78, 2);
+    background: #FE4E02;
     color: #fff;
 }
 
 .content {
-    background: rgb(244, 250, 255);
+    background: white;
+    color: black;
     min-height: 100px;
     padding: 20px;
 }

@@ -27,5 +27,23 @@ class WebsiteController {
 
 	}
 
+	public function overOns() {
+
+		echo"DIT IS DE OVER ONS PAGINA";
+
+	}
+
+	public function wordTransformer() {
+
+		echo"WORD OOK TRANSFORMER";
+
+	}
+
+	public function contact() {
+
+		echo"Contact";
+
+	}
+
 }
 
