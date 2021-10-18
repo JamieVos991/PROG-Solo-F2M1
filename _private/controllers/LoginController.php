@@ -20,6 +20,28 @@ class LoginController {
 
 
 	public function handleLoginForm(){
-		echo "LOGIN FORM AFHANDELEN";
+		
+		// Form valideren: email en wachtwoord ingevuld?
+		$result = validateRegistrationData($_POST);
+
+		// Checken: bestaat gebruiker met dat email wel?
+		if(userNotRegistered($result['data']['email'])){
+			$result['errors']['email'] = 'Deze gebruiker niet bekend';
+		} else {
+
+			// Controleren wachtwoord klopt (password_verify)
+
+			// Gebruiker inloggen
+
+			// Gebruiker doorsturen naar eigen dashboard (alleen ingelogde gebruikers)
+
+			// Anders foutmeldingen tonen in het inlogformulier 
+
+
+		}
+
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('login_form', ['errors' => $result['errors']] );
 	}
 }
