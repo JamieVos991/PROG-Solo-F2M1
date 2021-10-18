@@ -30,7 +30,7 @@
     <div class="form-group">
         <label for="wachtwoord">Wachtwoord</label>
         <input type="password" name="wachtwoord" class="form-control" id="wachtwoord">
-        <?php if (isset ($errors['wachtwoord'])): ?>
+        <?php if (isset ( $errors['wachtwoord'] ) ): ?>
             <?php echo $errors['wachtwoord'] ?>
         <?php endif;?>
     </div>

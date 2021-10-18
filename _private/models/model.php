@@ -11,6 +11,23 @@ function getUsers()
 	return $statement->fetchAll();
 }
 
+function getUserByEmail($email){
+
+	$connection = dbConnect();
+	$sql = "SELECT * FROM `gebruikers` WHERE email = :email";
+	$statement = $connection->prepare($sql);
+	$statement->execute(['email' => $email]);
+
+	if ($statement-> rowCount() === 1) {
+		return $statement->fetch();
+	}
+}
+
+
+
+
+
+
 function getAllBlogs()
 {
 	$connection = dbConnect();
@@ -60,7 +77,7 @@ function deleteTopic($topicToDelete)
 	$connection = dbConnect();
 	$sql = "DELETE FROM `topics` WHERE `topics`.`id` = :topic_id";
 	$statement = $connection->prepare($sql);
-	
+
 	$statement->execute([
 		'topic_id' => $topicToDelete
 	]);
