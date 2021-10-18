@@ -25,6 +25,7 @@ SimpleRouter::group( [ 'prefix' => site_url() ], function () {
 	SimpleRouter::get('/login', 'LoginController@LoginForm')->name('login.form');
 	SimpleRouter::post('/login/verwerken', 'LoginController@handleLoginForm')->name('login.handle');
 	SimpleRouter::get('/ingelogd/dashboard', 'LoginController@userDashboard')->name('login.dashboard');
+	SimpleRouter::get('/logout', 'LoginController@logout')->name('logout');
 	   
 
 

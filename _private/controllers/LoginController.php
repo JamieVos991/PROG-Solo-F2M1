@@ -38,11 +38,10 @@ class LoginController
 			if (password_verify($result['data']['wachtwoord'], $user['wachtwoord'])) {
 
 				// Gebruiker inloggen
-				$_SESSION['user_id'] = $user['id'];
+				loginUser($user);
 
 				// Gebruiker doorsturen naar eigen dashboard (alleen ingelogde gebruikers)
 				redirect(url('login.dashboard'));
-
 			} else {
 				$result['errors']['wachtwoord'] = 'Wachtwoord is niet correct';
 			}
@@ -54,7 +53,18 @@ class LoginController
 		echo $template_engine->render('login_form', ['errors' => $result['errors']]);
 	}
 
-	public function userDashboard(){
-		echo "Ingelogd!";
+	public function userDashboard()
+	{
+
+		// Checken of je wel echt bent ingelogd
+		loginCheck();
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('user_dashboard');
+	}
+
+	public function logout() {
+		logoutUser();
+		redirect(url('home'));
 	}
 }
