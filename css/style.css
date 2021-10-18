@@ -4,9 +4,7 @@
 body {
     font-family: 'Noto Sans', sans-serif;
     font-family: "Nunito", "Open Sans", Arial, Helvetica, sans-serif;
-    /* background: rgba(20, 58, 135, 0.8); */
-    background-color: #e5e5f7;
-    background-image:  linear-gradient(30deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(150deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(30deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(150deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(60deg, #FE8D0D77 25%, transparent 25.5%, transparent 75%, #FE8D0D77 75%, #FE8D0D77), linear-gradient(60deg, #FE8D0D77 25%, transparent 25.5%, transparent 75%, #FE8D0D77 75%, #FE8D0D77);
+    background: rgba(20, 58, 135, 0.8);
     background-size: 80px 140px;
     background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
     padding-bottom: 40px;
