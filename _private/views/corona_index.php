@@ -6,6 +6,6 @@
 
 <section class="corona-stats">
     <?php foreach ($countries as $country) : ?>
-        <a href="" class="corona-stats__country"><?php echo $country['Country']?> (<?php echo $country['ISO2']?>) </a>
+        <a href="<?php echo url('corona.details', ['country' => $country['Slug']])?>" class="corona-stats__country"><?php echo $country['Country']?> (<?php echo $country['ISO2']?>) </a>
     <?php endforeach; ?>
 </section>

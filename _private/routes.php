@@ -32,6 +32,9 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 	SimpleRouter::get('/test-database', 'TestController@queriesTesten');
 
 	SimpleRouter::get('/corona', 'CoronaController@index')->name('corona.index');
+	SimpleRouter::get('/corona/{country}', 'CoronaController@countryDetails')
+				->name('corona.details')
+				->where(['country' => '[A-Za-z0-9\-]+']);
 
 
 
