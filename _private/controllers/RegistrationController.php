@@ -30,7 +30,10 @@ class RegistrationController {
 		
 			if (userNotRegistered ($result['data']['email'])) {
 
-				createUser($result['data']['email'], $result['data']['wachtwoord']);
+				//Vertificatie code
+				$code = md5( uniqid( rand(), true ) );
+
+				createUser($result['data']['email'], $result['data']['wachtwoord'], $code);
 				
 				// Doorsturen naar de bedankt pagina
 				$bedanktUrl = url('register.thankyou');
@@ -54,5 +57,9 @@ class RegistrationController {
 	public function registrationThankYou(){
 		$template_engine = get_template_engine();
 		echo $template_engine->render("register_thankyou");
+	}
+
+	public function confirmRegistration($code){
+		echo $code; 
 	}
 }
