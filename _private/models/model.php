@@ -4,6 +4,7 @@
 
 function getUsers()
 {
+	
 	$connection = dbConnect();
 	$sql        = "SELECT * FROM `users`";
 	$statement  = $connection->query($sql);
@@ -11,7 +12,8 @@ function getUsers()
 	return $statement->fetchAll();
 }
 
-function getUserByEmail($email){
+function getUserByEmail($email)
+{
 
 	$connection = dbConnect();
 	$sql = "SELECT * FROM `gebruikers` WHERE email = :email";
@@ -25,7 +27,8 @@ function getUserByEmail($email){
 	return false;
 }
 
-function getUserById($id){
+function getUserById($id)
+{
 
 	$connection = dbConnect();
 	$sql = "SELECT * FROM `gebruikers` WHERE `id` = :id";
@@ -39,11 +42,12 @@ function getUserById($id){
 	return false;
 }
 
-function getUserByCode($code){
+function getUserByCode($code)
+{
 
 	$connection = dbConnect();
 	$sql 		= "SELECT * FROM `gebruikers` WHERE `code` = :code";
-	$statement 	= $connection->prepare($sql);
+	$statement = $connection->prepare($sql);
 	$statement->execute(['code' => $code]);
 
 	if ($statement-> rowCount() === 1) {

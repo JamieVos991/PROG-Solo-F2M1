@@ -6,7 +6,8 @@
     "pecee/simple-router": "^4.3",
     "league/plates": "^3.4",
     "ext-pdo": "*",
-    "swiftmailer/swiftmailer": "^6.3"
+    "swiftmailer/swiftmailer": "^6.3",
+    "guzzlehttp/guzzle": "^7.4"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"

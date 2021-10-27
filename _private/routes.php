@@ -31,6 +31,8 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 	SimpleRouter::get( '/stuur-test-email', 'EmailController@sendTestEmail' )->name( 'email.test' );
 	SimpleRouter::get('/test-database', 'TestController@queriesTesten');
 
+	SimpleRouter::get('/corona', 'CoronaController@index')->name('corona.index');
+
 
 
 

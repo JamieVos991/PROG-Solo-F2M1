@@ -1,5 +1,5 @@
 <?php $this->layout('layouts::website');?>
 
-<h3>Bedankt</h3>
+<h3>Thanks</h3>
 
-<p>Uw registratie is compleet.</p>
+<p>You are successfully registered. Check your email for instructions to activate your account</p>
