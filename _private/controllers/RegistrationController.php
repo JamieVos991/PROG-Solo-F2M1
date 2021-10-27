@@ -35,6 +35,9 @@ class RegistrationController {
 
 				createUser($result['data']['email'], $result['data']['wachtwoord'], $code);
 				
+				// Mail versturen met verificatie link + code
+				sendConfirmationEmail($result['data']['email'], $code);
+
 				// Doorsturen naar de bedankt pagina
 				$bedanktUrl = url('register.thankyou');
 				redirect($bedanktUrl);
@@ -60,6 +63,22 @@ class RegistrationController {
 	}
 
 	public function confirmRegistration($code){
-		echo $code; 
+		
+		// Hier moeten we de code gaan lezen
+
+		// Gebruiler ophalen bij die code
+		$user = getUserByCode($code);
+		if ($user === false){
+			echo "Onbekende gebruiker of al bevestigd?";
+			exit;
+		}
+
+		// Gebruiker activeren: code leegmaken in de database table
+		confirmAccount($code);
+
+		// Doorsturen naar de login pagina
+		$template_engine = get_template_engine();
+		echo $template_engine->render("register_confirmed");
+
 	}
 }

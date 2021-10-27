@@ -28,9 +28,23 @@ function getUserByEmail($email){
 function getUserById($id){
 
 	$connection = dbConnect();
-	$sql = "SELECT * FROM `gebruikers` WHERE id = :id";
+	$sql = "SELECT * FROM `gebruikers` WHERE `id` = :id";
 	$statement = $connection->prepare($sql);
 	$statement->execute(['id' => $id]);
+
+	if ($statement-> rowCount() === 1) {
+		return $statement->fetch();
+	}
+
+	return false;
+}
+
+function getUserByCode($code){
+
+	$connection = dbConnect();
+	$sql 		= "SELECT * FROM `gebruikers` WHERE `code` = :code";
+	$statement 	= $connection->prepare($sql);
+	$statement->execute(['code' => $code]);
 
 	if ($statement-> rowCount() === 1) {
 		return $statement->fetch();
