@@ -115,6 +115,32 @@ footer {
     display: flex;
 }
 
+.corona-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.corona-stats__country {
+    background: #4d89f1;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: block;
+    color: #ffffff;
+}
+
+.corona-stats__country:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background: #224aa3;
+}
+
+.corona-stats__stat {
+    background: #5d89f1;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: block;
+}
 
 
 @media screen and (min-width: 900px) {
