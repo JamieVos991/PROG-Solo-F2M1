@@ -1,19 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
-    font-family: "Nunito", "Open Sans", Arial, Helvetica, sans-serif;
-    background-image:  linear-gradient(30deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(150deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(30deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(150deg, #FE8D0D 12%, transparent 12.5%, transparent 87%, #FE8D0D 87.5%, #FE8D0D), linear-gradient(60deg, #FE8D0D77 25%, transparent 25.5%, transparent 75%, #FE8D0D77 75%, #FE8D0D77), linear-gradient(60deg, #FE8D0D77 25%, transparent 25.5%, transparent 75%, #FE8D0D77 75%, #FE8D0D77);
+    background: wheat;
+    overflow: hidden;
 }
 
-aside {
-    padding: 0px;
+.container {
+    max-width: 440px;
+    padding: 02 20px;
+    margin: 170px auto;
+}
+
+.wrapper {
+    width: 380px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.wrapper .title {
+    line-height: 90px;
+    background: red;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    font-size: 25px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.wrapper form {
+    padding: 30px 25px 25px 25px;
+}
+
+.wrapper form .row {
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.wrapper form .row input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 60px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    transition: all 0.6s ease;
+}
+
+/* form .row input:focus {
+    border-color: #16a085;
+    box-shadow: inset 0px 0px 2px 20px rgba(26, 188, 156, 0.25);
+} */
+
+.wrapper form .row i {
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+    background: brown;
+    border: 1px solid darkblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .wrapper form .pass {
+     margin: -8px 0 20px 0;
+ }
+
+ .wrapper form .pass a {
+     color: #16a085;
+     font-size: 14px;
+     text-decoration: none;
+ }
+
+ .wrapper form .pass a:hover {
+     text-decoration: underline;
+ }
+
+ .wrapper form .button input {
+     color: #fff;
+     font-size: 20px;
+     font-weight: 500;
+     padding-left: 0px;
+     background: #16a085;
+     border: 1px solid #16a085;
+     cursor: pointer;
+ }
+
+ form .button input:hover {
+    background: #12876f;
+ }
+
+ .wrapper form .signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+.wrapper form .signup-link a {
+    color: #16a085;
+    text-decoration: none;
+}
+
+form .signup-link a:hover {
+    text-decoration: underline;
 }
