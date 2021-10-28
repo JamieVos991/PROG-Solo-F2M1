@@ -14,20 +14,30 @@
     <div class="container">
         <div class="wrapper">
             <div class="title"><span>Login Form</span></div>
-            <form action="#">
+            <form action="<?php echo url("login.handle")?>" method="POST">
                 <div class="row">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" value="<?php echo input('email') ?>">
+                        <div class="fout">
+                            <?php if (isset($errors['email'])) : ?>
+                                <?php echo $errors['email'] ?>
+                            <?php endif; ?>
+                        </div>
                 </div>
                 <div class="row">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="wachtwoord" placeholder="Wachtwoord">
+                        <div class="fout">
+                            <?php if (isset($errors['wachtwoord'])) : ?>
+                                <?php echo $errors['wachtwoord'] ?>
+                            <?php endif; ?> 
+                        </div>
                 </div>
-                <div class="pass"><a href="#">Forgot Password?</a></div>
+                <div class="pass"><a href="#">Wachtwoord vergeten?</a></div>
                 <div class="row button">
                     <input type="submit" value="Login">
                 </div>
-                <div class="signup-link">Not a member? <a href="<?php echo url('register.form') ?>">Signup now</a></div>
+                <div class="signup-link">Niet een member? <a href="<?php echo url('register.form') ?>">Registreer nu</a></div>
             </form>
         </div>
     </div>

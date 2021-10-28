@@ -8,8 +8,14 @@
 }
 
 body {
-    background: wheat;
+    background: linear-gradient(135deg, #ffffff55 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #ffffff 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #ffffff55 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #ffffff 25%, #FE8D0D 25%) 0px 0/ 80px 80px;
     overflow: hidden;
+}
+
+.wrapper .row .fout{
+    color: red;
+    font-size: 14px;
+    padding: 2px 2px 2px 2px;
 }
 
 .container {
@@ -26,7 +32,7 @@ body {
 
 .wrapper .title {
     line-height: 90px;
-    background: red;
+    background: #5626CA;
     text-align: center;
     border-radius: 5px 5px 0 0;
     font-size: 25px;
@@ -41,7 +47,7 @@ body {
 
 .wrapper form .row {
     height: 45px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     position: relative;
 }
 
@@ -67,8 +73,8 @@ body {
     height: 100%;
     color: #fff;
     font-size: 18px;
-    background: brown;
-    border: 1px solid darkblue;
+    background: #5626CA;
+    border: 1px solid #5626CA;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,7 +85,7 @@ body {
  }
 
  .wrapper form .pass a {
-     color: #16a085;
+     color: #5626CA;
      font-size: 14px;
      text-decoration: none;
  }
@@ -93,23 +99,24 @@ body {
      font-size: 20px;
      font-weight: 500;
      padding-left: 0px;
-     background: #16a085;
-     border: 1px solid #16a085;
+     background: #5626CA;
+     border: 1px solid #5626CA;
      cursor: pointer;
  }
 
  form .button input:hover {
     background: #12876f;
+    border: 1px solid #12876f;
  }
 
  .wrapper form .signup-link {
     text-align: center;
     margin-top: 20px;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .wrapper form .signup-link a {
-    color: #16a085;
+    color: #5626CA;
     text-decoration: none;
 }
 
