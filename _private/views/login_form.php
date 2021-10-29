@@ -17,7 +17,7 @@
             <form action="<?php echo url("login.handle")?>" method="POST">
                 <div class="row">
                     <i class="fas fa-user"></i>
-                    <input type="email" name="email" placeholder="Email" value="<?php echo input('email') ?>">
+                    <input type="email" name="email" placeholder="E-mail" value="<?php echo input('email') ?>">
                         <div class="fout">
                             <?php if (isset($errors['email'])) : ?>
                                 <?php echo $errors['email'] ?>

@@ -1,24 +1,54 @@
-<?php $this->layout('layouts::website');?>
+<!DOCTYPE html>
+<html lang="en">
 
-<h3>Registreren</h3>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreren</title>
+    <link rel="stylesheet" href="../../css/registratie.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
 
-<p>Schrijf u snel in op de website om gebruik te maken van alle fantastische features.</p>
-
-<form action="<?php echo url("register.handle")?>" method="POST">
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" value="<?php echo input('email')?>" class="form-control" id="email" aria-describedby="emailHelp">
-        <small id="emailHelp" class="form-text text-muted">We delen uw e-mail adres met niemand, uw gegevens zijn veilig!</small>
-        <?php if (isset ($errors['email'])): ?>
-            <?php echo $errors['email'] ?>
-        <?php endif;?>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title"><span>Registratie Form</span></div>
+            <form action="<?php echo url("register.handle")?>" method="POST">
+                <div class="row">
+                    <i class="fas fa-address-card"></i>
+                    <input type="name" name="naam" placeholder="Volledige naam" required>
+                </div>
+                <div class="row">
+                    <i class="fas fa-user"></i>
+                    <input type="email" name="email" placeholder="E-mail" value="<?php echo input('email') ?>">
+                        <div class="fout">
+                            <?php if (isset($errors['email'])) : ?>
+                                <?php echo $errors['email'] ?>
+                            <?php endif; ?>
+                        </div>
+                </div>
+                <div class="row">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="wachtwoord" placeholder="Wachtwoord">
+                        <div class="fout">
+                            <?php if (isset($errors['wachtwoord'])) : ?>
+                                <?php echo $errors['wachtwoord'] ?>
+                            <?php endif; ?> 
+                        </div>
+                </div>
+                <div class="row">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="wachtwoord" placeholder="Herhaal Wachtwoord" required>
+                </div>
+                <div class="pass">Wij delen uw gegevens nooit voor commerciële doelstellingen</div>
+                <div class="row button">
+                    <input type="submit" value="Registreer">
+                </div>
+                <div class="signup-link">Al een account? <a href="<?php echo url('login.form') ?>">Log nu in</a></div>
+            </form>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="wachtwoord">Wachtwoord</label>
-        <input type="password" name="wachtwoord" class="form-control" id="wachtwoord">
-        <?php if (isset ($errors['wachtwoord'])): ?>
-            <?php echo $errors['wachtwoord'] ?>
-        <?php endif;?>
-    </div>
-    <button type="submit" class="btn btn-primary">Registreren</button>
-</form>
+</body>
+
+</html>
