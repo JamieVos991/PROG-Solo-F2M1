@@ -282,3 +282,18 @@ function sendConfirmationEmail($email, $code)
 	$message->setBody($email_text, 'text/html');
 	$mailer->send($message);
 }
+
+function sendPasswordResetEmail($email)
+{
+
+	$url = url('register.name', ['code' => $code]);
+	$absolute_url = absolute_url($url);
+
+	$mailer = getSwiftMailer();
+	$message = createEmailMessage($email, 'Bevestig je account', 'Buurtboodschappen website', '31694@ma-web.nl');
+	
+	$email_text = 'Hoi, bevestig nu je account: <a href="' . $absolute_url . '">Klik hier</a>';
+	
+	$message->setBody($email_text, 'text/html');
+	$mailer->send($message);
+}

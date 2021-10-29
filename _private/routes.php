@@ -12,10 +12,6 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 	// Lees de docs, daar zie je hoe je routes kunt maken: https://github.com/skipperbent/simple-php-router#routes
 
 	SimpleRouter::get('/', 'WebsiteController@home')->name('home');
-	SimpleRouter::get('/admin', 'WebsiteController@adminIndex')->name('admin');
-	SimpleRouter::get('/over-ons', 'WebsiteController@overOns')->name('overons');
-	SimpleRouter::get('/word-transformer', 'WebsiteController@wordTransformer')->name('transformer');
-	SimpleRouter::get('/contact', 'WebsiteController@contact')->name('contact');
 
 	// Registratie routes
 	SimpleRouter::get('/registreren', 'RegistrationController@registrationForm')->name('register.form');
@@ -28,7 +24,10 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 	SimpleRouter::post('/login/verwerken', 'LoginController@handleLoginForm')->name('login.handle');
 	SimpleRouter::get('/ingelogd/dashboard', 'LoginController@userDashboard')->name('login.dashboard');
 	SimpleRouter::get('/logout', 'LoginController@logout')->name('logout');
+	SimpleRouter::match(['get', 'post'], '/wachtwoord-vergeten', 'LoginController@passwordForgottenForm')->name('password.form');
+	SimpleRouter::match(['get', 'post'], '/wachtwoord-reset/{reset_code}', 'LoginController@passwordResetForm')->name('password.reset');
 
+	// Test routes
 	SimpleRouter::get( '/stuur-test-email', 'EmailController@sendTestEmail' )->name( 'email.test' );
 	SimpleRouter::get('/test-database', 'TestController@queriesTesten');
 

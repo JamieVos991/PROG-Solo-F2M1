@@ -74,4 +74,43 @@ class LoginController
 		logoutUser();
 		redirect(url('home'));
 	}
+
+	public function passwordForgottenForm() {
+
+		$errors = [];
+
+		if ( request()->getMethod() === 'post') {
+			// Formulier afhandelen
+
+			// Email checks
+			$email = filter_Var($_POST['email'], FILTER_VALIDATE_EMAIL);
+			if ($email === false) {
+				$errors['email'] = 'Geen geldig email adres opgegeven';
+			}
+
+			if (count ($errors) === 0) {
+				// Kijken of email in database staat
+				$user = getUserByEmail($email);
+				if ($user === false) {
+					$errors['email'] = 'Onbekend account';
+				}
+			}
+		}
+
+			// Als er geen fouten zijn, reset mail versturen
+			if(count($errors) === 0){
+				sendPasswordResetEmail($email);
+			}
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('password_forgotten_form', ['errors' => $errors]);
+	}
+
+	public function passwordResetForm($reset_code){
+
+		$errors = [];
+
+		$template_engine = get_template_engine();
+		echo $template_engine->render('password_reset_form', ['errors' => $errors, 'reset_code' => $reset_code]);
+	}
 }

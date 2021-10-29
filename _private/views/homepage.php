@@ -1,6 +1,7 @@
 <?php $this->layout('layouts::website');?>
 
 <?php $this->start('sidebar')?>
+<link rel="shortcut icon" type="image" href="../../images/TC logo.png">
 <!-- Door sections toe te voegen aan je layout kun je deze per pagina aanpassen -->
 <div class="top-10">
 	<h3>Meer weten over...</h3>

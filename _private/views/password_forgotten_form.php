@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inloggen</title>
+    <title>Wachtwoord vergeten</title>
     <link rel="shortcut icon" type="image" href="../../images/TC logo.png">
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../css/password_forgotten.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="wrapper">
-            <div class="title"><span>Login Form</span></div>
-            <form action="<?php echo url("login.handle")?>" method="POST">
+            <div class="title"><span>Wachtwoord vergeten</span></div>
+            <form action="<?php echo url("password.form")?>" method="POST">
                 <div class="row">
                     <i class="fas fa-user"></i>
                     <input type="email" name="email" placeholder="E-mail" value="<?php echo input('email') ?>">
@@ -24,21 +24,14 @@
                                 <?php echo $errors['email'] ?>
                             <?php endif; ?>
                         </div>
-                </div>
-                <div class="row">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="wachtwoord" placeholder="Wachtwoord">
-                        <div class="fout">
-                            <?php if (isset($errors['wachtwoord'])) : ?>
-                                <?php echo $errors['wachtwoord'] ?>
-                            <?php endif; ?> 
+                        <div class="pass">Vul hier je e-mail adres in en we sturen je een wachtwoord reset link. </div>
+                        <br>
+                        <div class="pass2">Tip: Probeer in een wachtwoord ook altijd één of meerdere leestekens te gebruiken, zoals: komma's, puntkomma's of een uitroepteken. </div>
+
+                        <div class="row button">
+                            <input type="submit" value="Stuur">
                         </div>
                 </div>
-                <div class="pass"><a href="<?php echo url('password.form') ?>">Wachtwoord vergeten?</a></div>
-                <div class="row button">
-                    <input type="submit" value="Login">
-                </div>
-                <div class="signup-link">Niet een member? <a href="<?php echo url('register.form') ?>">Registreer nu</a></div>
             </form>
         </div>
     </div>
