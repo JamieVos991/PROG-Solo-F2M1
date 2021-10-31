@@ -31,7 +31,7 @@ class CoronaController
 		});
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('corona_index', ['countries' => $countries] );
+		echo $template_engine->render('corona/corona_index', ['countries' => $countries] );
 		
 	}
 
@@ -51,7 +51,7 @@ class CoronaController
 		$data = json_decode($json, true);
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('corona_country_detail', ['stats' => $data] );
+		echo $template_engine->render('corona/corona_country_detail', ['stats' => $data] );
 		
 	}
 }

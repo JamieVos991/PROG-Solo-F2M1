@@ -17,7 +17,7 @@ class LoginController
 	{
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render('login_form');
+		echo $template_engine->render('login/login_form');
 	}
 
 
@@ -36,7 +36,7 @@ class LoginController
 			$user = getUserByEmail($result['data']['email']);
 
 			// Kijken of de gebruiker wel actief is (code is NULL)
-			if( is_null ( $user['code'] ) ) {
+			if (is_null($user['code'])) {
 
 				if (password_verify($result['data']['wachtwoord'], $user['wachtwoord'])) {
 
@@ -45,7 +45,6 @@ class LoginController
 
 					// Gebruiker doorsturen naar eigen dashboard (alleen ingelogde gebruikers)
 					redirect(url('login.dashboard'));
-
 				} else {
 					$result['errors']['wachtwoord'] = 'Wachtwoord is niet correct';
 				}
@@ -70,47 +69,53 @@ class LoginController
 		echo $template_engine->render('user_dashboard');
 	}
 
-	public function logout() {
+	public function logout()
+	{
 		logoutUser();
 		redirect(url('home'));
 	}
 
-	public function passwordForgottenForm() {
+	public function passwordForgottenForm()
+	{
 
-		$errors = [];
+	 	$errors = [];
+		$mail_sent = false;
 
-		if ( request()->getMethod() === 'post') {
-			// Formulier afhandelen
+	 	if (request()->getMethod() === 'post') {
+	 		// Formulier afhandelen
 
-			// Email checks
-			$email = filter_Var($_POST['email'], FILTER_VALIDATE_EMAIL);
-			if ($email === false) {
-				$errors['email'] = 'Geen geldig email adres opgegeven';
-			}
+	 		// Email checks
+	 		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+	 		if ($email === false) {
+	 			$errors['email'] = 'Geen geldig email adres opgegeven';
+	 		}
 
-			if (count ($errors) === 0) {
-				// Kijken of email in database staat
-				$user = getUserByEmail($email);
-				if ($user === false) {
-					$errors['email'] = 'Onbekend account';
-				}
-			}
-		}
+	 		if (count($errors) === 0) {
+	 			// Kijken of email in database staat
+	 			$user = getUserByEmail($email);
+	 			if ($user === false) {
+	 				$errors['email'] = 'Onbekend account';
+	 			}
+	 		}
+	 	}
 
-			// Als er geen fouten zijn, reset mail versturen
-			if(count($errors) === 0){
-				sendPasswordResetEmail($email);
-			}
+	 	// Als er geen fouten zijn, reset mail versturen
+	 	if (count($errors) === 0) {
+			sendPasswordResetEmail($email);
+			$mail_sent = true;
+	 	}
 
-		$template_engine = get_template_engine();
-		echo $template_engine->render('password_forgotten_form', ['errors' => $errors]);
-	}
+	 	$template_engine = get_template_engine();
+	 	echo $template_engine->render('password_forgotten_form', ['errors' => $errors, 'mail_sent' => $mail_sent]);
+		 
+	 }  
 
-	public function passwordResetForm($reset_code){
+	 public function passwordResetForm($reset_code)
+	{
 
-		$errors = [];
+	 	$errors = [];
 
-		$template_engine = get_template_engine();
-		echo $template_engine->render('password_reset_form', ['errors' => $errors, 'reset_code' => $reset_code]);
+	 	$template_engine = get_template_engine();
+	 	echo $template_engine->render('password_reset_form', ['errors' => $errors, 'reset_code' => $reset_code]);
 	}
 }

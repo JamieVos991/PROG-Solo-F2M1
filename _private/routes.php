@@ -14,28 +14,52 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 	SimpleRouter::get('/', 'WebsiteController@home')->name('home');
 
 	// Registratie routes
-	SimpleRouter::get('/registreren', 'RegistrationController@registrationForm')->name('register.form');
-	SimpleRouter::post('/registreren/verwerken', 'RegistrationController@handleRegistrationForm')->name('register.handle');
-	SimpleRouter::get('/registreren/bedankt', 'RegistrationController@registrationThankYou')->name('register.thankyou');
-	SimpleRouter::get('/registreren/bevestigen/{code}', 'RegistrationController@confirmRegistration')->name('register.name');
+	SimpleRouter::group(['prefix' => '/registreren'], function(){
+
+		SimpleRouter::get('', 'RegistrationController@registrationForm')->name('register.form');
+		SimpleRouter::post('/verwerken', 'RegistrationController@handleRegistrationForm')->name('register.handle');
+		SimpleRouter::get('/bedankt', 'RegistrationController@registrationThankYou')->name('register.thankyou');
+		SimpleRouter::get('/bevestigen/{code}', 'RegistrationController@confirmRegistration')->name('register.name');
+
+	});
 
 	// Login routes
 	SimpleRouter::get('/login', 'LoginController@LoginForm')->name('login.form');
 	SimpleRouter::post('/login/verwerken', 'LoginController@handleLoginForm')->name('login.handle');
 	SimpleRouter::get('/ingelogd/dashboard', 'LoginController@userDashboard')->name('login.dashboard');
 	SimpleRouter::get('/logout', 'LoginController@logout')->name('logout');
+
+	// Wachtwoord vergeten
 	SimpleRouter::match(['get', 'post'], '/wachtwoord-vergeten', 'LoginController@passwordForgottenForm')->name('password.form');
 	SimpleRouter::match(['get', 'post'], '/wachtwoord-reset/{reset_code}', 'LoginController@passwordResetForm')->name('password.reset');
 
 	// Test routes
 	SimpleRouter::get( '/stuur-test-email', 'EmailController@sendTestEmail' )->name( 'email.test' );
 	SimpleRouter::get('/test-database', 'TestController@queriesTesten');
+	
+	// Blog routes
+	SimpleRouter::group(['prefix' => '/blog'], function(){
+		
+		SimpleRouter::get('', 'BlogController@index')->name('blog.index');
+		SimpleRouter::get('/{slug}', 'BlogController@showBlog')->name('blog.detail');
 
+	});
+
+	// Corona routes
 	SimpleRouter::get('/corona', 'CoronaController@index')->name('corona.index');
 	SimpleRouter::get('/corona/{country}', 'CoronaController@countryDetails')
 				->name('corona.details')
 				->where(['country' => '[A-Za-z0-9\-]+']);
+	
+	//Admin routes
+	SimpleRouter::group(['prefix' => '/admin'], function(){
+		SimpleRouter::get('', 'AdminController@index')->name('admin.index');
+	});
 
+	// Secure (ingelogde gebruikers) routes
+	SimpleRouter::group(['prefix' => '/ingelogd'], function(){
+		SimpleRouter::get('', 'SecureController@index')->name('secure.index');
+	}); 
 
 
 

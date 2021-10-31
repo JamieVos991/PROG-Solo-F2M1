@@ -15,7 +15,7 @@ class RegistrationController {
 	public function registrationForm(){
 		
 		$template_engine = get_template_engine();
-		echo $template_engine->render('register_form');
+		echo $template_engine->render('register/register_form');
 	}
 
 	public function handleRegistrationForm(){	
@@ -36,10 +36,10 @@ class RegistrationController {
 				createUser($result['data']['email'], $result['data']['wachtwoord'], $code);
 				
 				// Mail versturen met verificatie link + code
-				sendConfirmationEmail($result['data']['email'], $code);
+				//sendConfirmationEmail($result['data']['email'], $code);
 
 				// Doorsturen naar de bedankt pagina
-				$bedanktUrl = url('register.thankyou');
+				$bedanktUrl = url('register/register.thankyou');
 				redirect($bedanktUrl);
 
 				// Alles hierna wordt niet meer uitgevoerd
@@ -53,13 +53,13 @@ class RegistrationController {
 		}
 
 		$template_engine = get_template_engine();
-		echo $template_engine->render( 'register_form', ['errors' => $errors]);
+		echo $template_engine->render( 'register/register_form', ['errors' => $errors]);
 
 	}
 
 	public function registrationThankYou(){
 		$template_engine = get_template_engine();
-		echo $template_engine->render("register_thankyou");
+		echo $template_engine->render("register/register_thankyou");
 	}
 
 	public function confirmRegistration($code){

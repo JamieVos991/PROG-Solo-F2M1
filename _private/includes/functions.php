@@ -268,32 +268,30 @@ function confirmAccount($code){
 	$statement->execute($params);
 }
 
-function sendConfirmationEmail($email, $code)
-{
-
-	$url = url('register.name', ['code' => $code]);
-	$absolute_url = absolute_url($url);
-
-	$mailer = getSwiftMailer();
-	$message = createEmailMessage($email, 'Bevestig je account', 'Buurtboodschappen website', '31694@ma-web.nl');
-	
-	$email_text = 'Hoi, bevestig nu je account: <a href="' . $absolute_url . '">Klik hier</a>';
-	
-	$message->setBody($email_text, 'text/html');
-	$mailer->send($message);
-}
-
 function sendPasswordResetEmail($email)
 {
+ 	// Code genereren en opslaan bij dit email adres (gebruiker)
+ 	$reset_code = md5(uniqid(rand(), true)); 
+ 	$connection = dbConnect();
+ 	$sql = "UPDATE `gebruikers` SET `password_reset` = :code WHERE `email` = :email";
+ 	$statement = $connection->prepare($sql);
+	$params = [
+		'code' => $reset_code,
+		'email' => $email
+	];
 
-	$url = url('register.name', ['code' => $code]);
-	$absolute_url = absolute_url($url);
+ 	$statement->execute($params);
 
-	$mailer = getSwiftMailer();
-	$message = createEmailMessage($email, 'Bevestig je account', 'Buurtboodschappen website', '31694@ma-web.nl');
-	
-	$email_text = 'Hoi, bevestig nu je account: <a href="' . $absolute_url . '">Klik hier</a>';
-	
-	$message->setBody($email_text, 'text/html');
-	$mailer->send($message);
+ 	// Link genereren met die code
+	 $url = url('password.reset', ['reset_code' => $reset_code]);
+	 $absolute_url = absolute_url($url);
+
+ 	// Mail opstellen en versturen
+	 $mailer = getSwiftMailer();
+	 $message = createEmailMessage($email, 'Bevestig je account', 'Buurtboodschappen website', 'Jamievos100@gmail.com');
+
+	 $email_text = 'Hoi, klik hier om je wachtwoord te resetten: <a href="' . $absolute_url . '">Wachtwoord resetten</a>';
+
+	 $message->setBody($email_text, 'text/html');
+	 $mailer->send($message);
 }
