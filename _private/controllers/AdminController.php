@@ -6,9 +6,7 @@ class AdminController {
     
     public function index(){
 
-        loginCheck();
-
         $template_engine = get_template_engine();
-        echo $template_engine->render('admin/index');
+        echo $template_engine->render('admin/index', ['user' => request()->user]);
     }
 }

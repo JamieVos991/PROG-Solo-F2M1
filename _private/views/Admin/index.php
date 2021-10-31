@@ -2,4 +2,4 @@
 
 <?php $this->start('title')?>Admin<?php $this->stop();?>
 
-<h1>Admin</h1>
+<h1>Welkom <?php echo $user['email']?></h1>

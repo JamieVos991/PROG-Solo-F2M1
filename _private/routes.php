@@ -3,6 +3,8 @@
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
 use Pecee\SimpleRouter\SimpleRouter;
+use Website\Middleware\IsAuthenticated;
+use Website\Middleware\IsSuperAdmin;
 
 SimpleRouter::setDefaultNamespace('Website\Controllers');
 
@@ -52,12 +54,12 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 				->where(['country' => '[A-Za-z0-9\-]+']);
 	
 	//Admin routes
-	SimpleRouter::group(['prefix' => '/admin'], function(){
+	SimpleRouter::group(['prefix' => '/admin', 'middleware' => IsSuperAdmin::class], function(){
 		SimpleRouter::get('', 'AdminController@index')->name('admin.index');
 	});
 
 	// Secure (ingelogde gebruikers) routes
-	SimpleRouter::group(['prefix' => '/ingelogd'], function(){
+	SimpleRouter::group(['prefix' => '/ingelogd', 'middleware' =>  IsAuthenticated::class], function(){
 		SimpleRouter::get('', 'SecureController@index')->name('secure.index');
 	}); 
 

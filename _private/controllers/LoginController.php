@@ -108,9 +108,9 @@ class LoginController
 	 	$template_engine = get_template_engine();
 	 	echo $template_engine->render('password_forgotten_form', ['errors' => $errors, 'mail_sent' => $mail_sent]);
 		 
-	 }  
+	}  
 
-	 public function passwordResetForm($reset_code)
+	public function passwordResetForm($reset_code)
 	{
 
 	 	$errors = [];

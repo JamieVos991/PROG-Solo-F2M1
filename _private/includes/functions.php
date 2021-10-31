@@ -196,14 +196,6 @@ function getLoggedInUserEmail()
 	return $email;
 }
 
-// Voeg deze code toe onderaan in je private/includes/functions.php
-// ZONDER de eerste PHP tag want die staat al bovenaan je functions.php ;-)
-
-/**
- * Maak de SwiftMailer aan en stet hem op de juiste manier in
- *
- * @return Swift_Mailer
- */
 function getSwiftMailer()
 {
 	$mail_config = get_config('MAIL');
@@ -216,16 +208,6 @@ function getSwiftMailer()
 	return $mailer;
 }
 
-/**
- * Maak een Swift_Message met de opgegeven subject, afzender en ontvanger
- *
- * @param $to
- * @param $subject
- * @param $from_name
- * @param $from_email
- *
- * @return Swift_Message
- */
 function createEmailMessage($to, $subject, $from_name, $from_email)
 {
 
@@ -238,13 +220,6 @@ function createEmailMessage($to, $subject, $from_name, $from_email)
 	return $message;
 }
 
-/**
- *
- * @param $message \Swift_Message De Swift Message waarin de afbeelding ge-embed moet worden
- * @param $filename string Bestandsnaam van de afbeelding (wordt automatisch uit juiste folder gehaald)
- *
- * @return mixed
- */
 function embedImage($message, $filename)
 {
 	$image_path = get_config('WEBROOT') . '/images/email/' . $filename;
@@ -266,6 +241,15 @@ function confirmAccount($code){
 		'code' => $code
 	];
 	$statement->execute($params);
+}
+
+function loggedInUser(){
+
+	if(!isLoggedIn()){
+		return false;
+	}
+
+	return getUserById($_SESSION['user_id']);
 }
 
 function sendPasswordResetEmail($email)

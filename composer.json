@@ -21,7 +21,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "Website\\Controllers\\": "_private/controllers/"
+      "Website\\Controllers\\": "_private/controllers/",
+      "Website\\Middleware\\": "_private/middleware/"
     }
   }
 }
