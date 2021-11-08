@@ -19,4 +19,5 @@ require_once get_config('PRIVATE') . '/routes.php';
  * Hier wordt de opgevraagde URL gematched aan alle URL's die zijn ingesteld
  * Als de URL bestaat wordt de juiste code aangeroepen die er bij hoort (de controller)
  */
+
 SimpleRouter::start();

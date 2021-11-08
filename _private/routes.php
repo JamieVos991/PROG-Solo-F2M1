@@ -41,7 +41,7 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 	
 	// Blog routes
 	SimpleRouter::group(['prefix' => '/blog'], function(){
-		
+
 		SimpleRouter::get('', 'BlogController@index')->name('blog.index');
 		SimpleRouter::get('/{slug}', 'BlogController@showBlog')->name('blog.detail');
 
@@ -56,10 +56,10 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 	//Admin routes
 	SimpleRouter::group(['prefix' => '/admin', 'middleware' => IsSuperAdmin::class], function(){
 		SimpleRouter::get('', 'AdminController@index')->name('admin.index');
-	});
+	}); 
 
 	// Secure (ingelogde gebruikers) routes
-	SimpleRouter::group(['prefix' => '/ingelogd', 'middleware' =>  IsAuthenticated::class], function(){
+	SimpleRouter::group(['prefix' => '/ingelogd', 'middleware' => IsAuthenticated::class], function(){
 		SimpleRouter::get('', 'SecureController@index')->name('secure.index');
 	}); 
 

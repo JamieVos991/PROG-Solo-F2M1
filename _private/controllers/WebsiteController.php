@@ -21,29 +21,5 @@ class WebsiteController {
 
 	}
 
-	public function adminIndex() {
-
-		echo"DIT IS DE ADMIN PAGINA";
-
-	}
-
-	public function overOns() {
-
-		echo"DIT IS DE OVER ONS PAGINA";
-
-	}
-
-	public function wordTransformer() {
-
-		echo"WORD OOK TRANSFORMER";
-
-	}
-
-	public function contact() {
-
-		echo"Contact";
-
-	}
-
 }
 
