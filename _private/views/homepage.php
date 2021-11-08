@@ -18,13 +18,13 @@
                 <a class="but-style" href="<?php echo url('home') ?>">Home</a>
                 </li>
                 <li>
-                <a class="but-style" href="#">Word transformer!</a>
+                <a class="but-style" href="<?php echo url('corona.index') ?>">Corona</a>
                 </li>
                 <li>
-                <a class="but-style" href="<?php echo url('corona.index') ?>">Corona Statistieken</a>
+                <a class="but-style" href="<?php echo url('register.form') ?>">Aanmelden</a>
                 </li>
                 <li>
-                <a class="but-style" href="#">Contact</a>
+                <a class="but-style" href="<?php echo url('login.form') ?>">Inloggen</a>
                 </li>
         </ul>
         </nav>
