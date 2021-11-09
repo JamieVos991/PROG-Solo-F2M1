@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>About Us Section</title>
+	<title>About Us</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+	<link rel="shortcut icon" type="image" href="../../images/TC logo.png">
 	<link rel="stylesheet" type="text/css" href="../../css/about.css">
+	<link rel="stylesheet" type="text/css" href="../../css/nav.css">
 </head>	
 <body>
+	<div class="wrapper">
+		<header>
+			<a href="" class="logo">Logo</a>
+			<div class="menu-toggle"></div>
+				<nav>
+					<ul>
+						<li><a href="<?php echo url('home') ?>" class="active">Home</a></li>
+						<li><a href="<?php echo url('corona.index') ?>">Corona</a></li>
+						<li><a href="<?php echo url('contact.form') ?>">Contact</a></li>
+						<li><a href="<?php echo url('register.form') ?>">Aanmelden</a></li>
+						<li><a href="<?php echo url('login.form') ?>">Inloggen</a></li>
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+		</header>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+			<script type="text/javascript">
+			$(document).ready(function(){
+				$(document).ready(function(){
+					$('.menu-toggle').click(function(){
+						$('.menu-toggle').toggleClass('active')
+						$('nav').toggleClass('active')
+					})
+				})
+			})
+		</script>
+	</div>
 	<div class="section">
 		<div class="container">
 			<div class="content-section">
@@ -15,13 +44,10 @@
 					<h1>Over ons</h1>
 				</div>
 				<div class="content">
-					<h3>Weet jij wat je moet doen om mentaal gezond te zijn? Nee? Dan ben je niet de enige.</h3>
-					<p>Terwijl de meesten van ons wel weten wat je moet doen om fysiek gezond te zijn, leert niemand ons wat ervoor nodig om mentaal gezond te zijn. Op school niet, thuis niet, op het werk niet. Terwijl je mentale gezondheid essentieel is! Tegelijkertijd vormen jongeren de meest kwetsbare doelgroep voor de ontwikkeling van mentale problemen. Maar liefst 80 (!) procent van de mentale aandoeningen zoals depressie of angst start tussen de 15 en 25 jaar. 
-                        Bij de Transformers Community creëren wij samen met jongeren meer kennis, bewustzijn en openheid rondom mentale gezondheid. Door te focussen op herkenning, erkenning en verbinding willen wij mentale problemen voorkomen in plaats van genezen. 
-                        We werken er naar toe om uit te groeien tot een sociale beweging van jongeren die elkaar helpt om mentaal weerbaar en veerkrachtig te zijn.</p>
-					<div class="button">
-						<a href="<?php echo url('home') ?>">Terug</a>
-					</div>
+					<h3>Praat over dingen die je eerder nergens kwijt kon.</h3>
+					<p>In onze online community kan je binnen een veilige omgeving (anoniem) jouw ervaringen en 
+						gevoelens delen. Hier helpen en steunen we elkaar. Ook worden er wekelijks praktische tips
+						gedeeld die jou helpen om zelfverzekerd te zijn en om te gaan met moeilijke situaties.</p>
 				</div>
 				<div class="social">
 					<a href="https://instagram.com/transformer.community?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>

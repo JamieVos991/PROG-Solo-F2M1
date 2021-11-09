@@ -5,13 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/contact.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    <link rel="shortcut icon" type="image" href="../../images/TC logo.png">
     <title>Contact</title>
 </head>
 <body>
+<div class="wrapper">
+    <header>
+            <a href="" class="logo">Logo</a>
+            <div class="menu-toggle"></div>
+                <nav>
+                    <ul>
+                        <li><a href="<?php echo url('home') ?>" class="active">Home</a></li>
+                        <li><a href="<?php echo url('corona.index') ?>">Corona</a></li>
+                        <li><a href="<?php echo url('contact.form') ?>">Contact</a></li>
+                        <li><a href="<?php echo url('register.form') ?>">Aanmelden</a></li>
+                        <li><a href="<?php echo url('login.form') ?>">Inloggen</a></li>
+                    </ul>
+                </nav>
+                <div class="clearfix"></div>
+        </header>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+            <script type="text/javascript">
+            $(document).ready(function(){
+                $(document).ready(function(){
+                    $('.menu-toggle').click(function(){
+                        $('.menu-toggle').toggleClass('active')
+                        $('nav').toggleClass('active')
+                    })
+                })
+            })
+        </script>
+</div>
+    
     <div class="contactUs">
-        <div class="title">
-            <h2>Contacteer ons</h2>
-        </div>
+
         <div class="box">
             <div class="contact form">
                 <h3>Stuur een bericht</h3>
@@ -43,7 +71,7 @@
                         <div class="row100">
                             <div class="inputBox">
                                 <span>Bericht</span>
-                                <textarea placeholder="Write your message here.."></textarea>
+                                <textarea placeholder="Typ hier je bericht.."></textarea>
                             </div>
                         </div>
 
