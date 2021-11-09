@@ -12,7 +12,7 @@
   }
   
   body {
-    background: linear-gradient(135deg, #ffffff55 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(225deg, #ffffff 25%, transparent 25%) -40px 0/ 80px 80px, linear-gradient(315deg, #ffffff55 25%, transparent 25%) 0px 0/ 80px 80px, linear-gradient(45deg, #ffffff 25%, #FE8D0D 25%) 0px 0/ 80px 80px;
+    background: linear-gradient(90deg, #1E07A0 0%, #1E07A0 30%, #FE8D0D 30%, #FE8D0D 100%);
   }
 
   .btn {
@@ -44,20 +44,17 @@
   }
 
   .main-nav .but-style {
-    color: white;
+    color: black;
     text-decoration: none;
-    font-weight: 600;
     font-size: 20px;
-    border-radius: 50px;
   }
   
   .main-nav a {
-    background: #5626CA;
+    background: #F4FAFF;
     display: block;
     text-decoration: none;
     padding: 0.8rem;
     text-align: center;
-    color: var(--dark);
     font-size: 1.1rem;
     box-shadow: var(--shadow);
   }
@@ -166,6 +163,14 @@
   }
   
   /* Media Queries */
+
+  @media (max-width: 991px){
+
+    body {
+        background: #FE8D0D;
+    }
+  }
+  
   @media (max-width: 700px) {
     .top-container {
       grid-template-areas:

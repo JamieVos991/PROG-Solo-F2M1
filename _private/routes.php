@@ -63,6 +63,9 @@ SimpleRouter::group(['prefix' => site_url()], function () {
 		SimpleRouter::get('', 'SecureController@index')->name('secure.index');
 	}); 
 
+	SimpleRouter::get( '/about', 'AboutController@index' )->name( 'about.form' );
+	SimpleRouter::get( '/contact', 'ContactController@index' )->name( 'contact.form' );
+
 
 
 	// STOP: Tot hier al je eigen URL's zetten, dit stukje laat de 4040 pagina zien als een route/url niet kan worden gevonden.

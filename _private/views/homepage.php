@@ -1,3 +1,9 @@
+<!-- 
+        //////////////////////////////////////////
+        Made by Jamie Vos, Mediacollege Amsterdam. 
+        //////////////////////////////////////////
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +18,8 @@
 <body>
         <div class="wrapper">
         <!-- Navigation -->
+
+
         <nav class="main-nav">
         <ul>
                 <li>
@@ -34,17 +42,17 @@
         <header class="showcase">
                 <h1>Life sucks sometimes.</h1>
                 <p>Maar je staat er niet alleen voor. De Transformers Community is er voor jongeren die zelfverzekerd willen zijn en tegenslagen omzetten in kracht. We doen dit samen: zo leren we meer en helpen we elkaar om te groeien.</p>
-                <a href="#" class="btn">Lees meer</a>
+                <a href="<?php echo url('about.form') ?>" class="btn">Lees meer</a>
         </header>
         <div class="top-box top-box-a">
-                <h4>Log in</h4>
-                <p class="price">Log hier in <br>op uw Transformers-account <br>om aan de slag te gaan</p>
-                <a href="<?php echo url('login.form') ?>" class="btn">Inloggen</a>
+                <i class="far fa-address-card fa-3x"></i>
+                <p class="price">Wil je meer weten?<br>Klik hier voor meer<br>informatie.</p>
+                <a href="<?php echo url('about.form') ?>" class="btn">About</a>
         </div>
         <div class="top-box top-box-b">
-                <h4>Aanmelden</h4>
-                <p class="price">Registreer hier <br> om uw Transformers-account<br>te kunnen maken</p>
-                <a href="<?php echo url('register.form') ?>" class="btn">Registreren</a>
+                <i class="fas fa-hashtag fa-3x"></i>
+                <p class="price">Vind hier contact gegevens of <br> stuur een bericht naar<br>Transformers-community.</p>
+                <a href="<?php echo url('contact.form') ?>" class="btn">Contact</a>
         </div>
         </section>
 
@@ -79,7 +87,7 @@
                 <h2>Praat over dingen die je eerder nergens kwijt kon.</h2>
                 <p>In onze online community kan je binnen een veilige omgeving (anoniem) jouw ervaringen en gevoelens delen. Hier helpen en steunen we elkaar. Ook worden er wekelijks praktische tips gedeeld die jou helpen om zelfverzekerd te zijn en om te gaan met moeilijke situaties.</p>
                 <br>    
-                <a href="#" class="btn">Meld je gratis aan</a>
+                <a href="<?php echo url('register.form') ?>" class="btn">Meld je gratis aan</a>
         </div>
         </section>
 
