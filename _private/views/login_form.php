@@ -8,38 +8,10 @@
     <title>Inloggen</title>
     <link rel="shortcut icon" type="image" href="../../images/TC logo.png">
     <link rel="stylesheet" href="../../css/login.css">
-    <link rel="stylesheet" href="../../css/nav.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="wrapperr">
-    <header>
-        <a href="" class="logo">Logo</a>
-        <div class="menu-toggle"></div>
-            <nav>
-                <ul>
-                    <li><a href="<?php echo url('home') ?>" class="active">Home</a></li>
-                    <li><a href="<?php echo url('corona.index') ?>">Corona</a></li>
-                    <li><a href="<?php echo url('contact.form') ?>">Contact</a></li>
-                    <li><a href="<?php echo url('register.form') ?>">Aanmelden</a></li>
-                    <li><a href="<?php echo url('login.form') ?>">Inloggen</a></li>
-                </ul>
-            </nav>
-            <div class="clearfix"></div>
-    </header>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $(document).ready(function(){
-                    $('.menu-toggle').click(function(){
-                        $('.menu-toggle').toggleClass('active')
-                        $('nav').toggleClass('active')
-                    })
-                })
-            })
-        </script>
-        
     <div class="container">
         <div class="wrapper">
             <div class="title"><span>Login Form</span></div>
